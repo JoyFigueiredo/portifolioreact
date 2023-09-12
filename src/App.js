@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './componentes/Header';
+import Footer from './componentes/Footer';
+import HomePage from './pages/HomePage';
+import ProjectsPage from './pages/ProjectsPage';
+import ClientsPage from './pages/ClientsPage';
+import ContactsPage from './pages/ContactsPage';
+import Jogo2048 from './pages/subPagesProjects/Jogo2048';
+import Sudoku from './pages/subPagesProjects/Sudoku';
+import DislexInfo from './pages/subPagesProjects/Dislexinfo';
 
 function App() {
+  const headerStyle = {
+    backgroundColor: "#F6DEE5",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={headerStyle}>
+        <Header />
+        <main>
+        <Routes>
+        <Route path="/" element={<HomePage />} />
+          <Route path="/projetos" element={<ProjectsPage />} />
+          <Route path="/projetos/Dislexinfo" element={<DislexInfo />} />
+          <Route path="/projetos/Jogo2048" element={<Jogo2048 />} />
+          <Route path="/projetos/Sudoku" element={<Sudoku />} />
+          <Route path="/clientes" element={<ClientsPage />} />
+          <Route path="/contatos" element={<ContactsPage />} />
+        </Routes>
+        </main>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
