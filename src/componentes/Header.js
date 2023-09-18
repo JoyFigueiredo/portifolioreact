@@ -1,41 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function Header() {
   return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container" >
-          <Link className="navbar-brand" to="/">Joice Barros de Figueiredo</Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">Página Inicial</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/projetos">Projetos</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/clientes">Clientes</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contatos">Contato</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href='/' >Joice Barros de Figueiredo</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Página Inicial</Nav.Link>
+            <Nav.Link href="/projetos">Projetos</Nav.Link>
+            <Nav.Link href="/clientes">Clientes</Nav.Link>
+            <Nav.Link href="/contatos">Contatos</Nav.Link>
+            
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-      export default Header;
+export default Header;
