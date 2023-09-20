@@ -117,6 +117,11 @@ src/ components/ Header.js Footer.js pages/ HomePage.js ProjectsPage.js ClientsP
 	/* Outros estilos de hover, se necessário */
 }
 
+.corButton:visited{
+	background-color: #ffcefd;
+	border: #491f31;
+}
+
 a:link {
 	color: #860541
 }
